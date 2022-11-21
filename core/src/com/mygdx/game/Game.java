@@ -35,7 +35,7 @@ public class Game implements Screen {
 
     public Game(Main main) {
         this.main = main;
-
+        batch=new SpriteBatch();
         clouds = new Texture("Terrain/theme2.png");
         clouds.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 

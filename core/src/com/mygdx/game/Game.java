@@ -66,7 +66,7 @@ public class Game implements Screen {
         settingsBox = new Rectangle();
         settingsBox.x = 0;
         settingsBox.y = 0;
-        settingsBox.width = 64;
+        settingsBox.width = 66;
         settingsBox.height = 58;
     }
 

@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
@@ -29,20 +30,20 @@ public class MainMenu implements Screen {
         batch = new SpriteBatch();
 
         tankstarslogo = new Texture("MainMenu/tankstars.png");
-        vsComp = new Texture("MainMenu/vsComputer.png");
-        vsFriend = new Texture("MainMenu/vsFriend.png");
+        vsComp = new Texture("MainMenu/vsComputer1.png");
+        vsFriend = new Texture("MainMenu/vsFriend1.png");
         bg = new Texture("MainMenu/Homescreen_BG.png");
         bg1 = new Texture("MainMenu/bg.png");
         tank1 = new Texture("Tanks/tank1.png");
-        settingIcon = new Texture("MainMenu/settingSmall1.png");
+        settingIcon = new Texture("MainMenu/set.png");
 //        arrowLeft = new Texture("MainMenu/arrow_left.png");
 //        arrowRight = new Texture("MainMenu/arrow_right.png");
 
         vsCompBox = new Rectangle();
-        vsCompBox.x = 2560/2.398f;
-        vsCompBox.y = 320;
-        vsCompBox.width = 551;
-        vsCompBox.height = 130;
+        vsCompBox.x = 2560/2.32f;
+        vsCompBox.y = 340;
+        vsCompBox.width = 490;
+        vsCompBox.height = 126;
 
         settingBox = new Rectangle();
         settingBox.x = 0;
@@ -62,13 +63,13 @@ public class MainMenu implements Screen {
         main.getbatch().begin();
         main.getbatch().draw(bg1, 0,0, 2688, 1242);
         main.getbatch().draw(bg, 0, -60, 1020, 1180);
-        main.getbatch().draw(settingIcon, 0, 820, 128, 128);
+        main.getbatch().draw(settingIcon, 0, 538, 750, 680);
         main.getbatch().draw(tank1, 250, 75, 580, 580);
 //        main.batch.draw(arrowLeft, 180, 750, 40, 40);
 //        main.batch.draw(arrowRight, 680, 750, 40, 40);
-        main.getbatch().draw(tankstarslogo, 2560/2.212f, 700, 400, 200);
-        main.getbatch().draw(vsComp, vsCompBox.x, vsCompBox.y, vsCompBox.width, vsCompBox.height);
-        main.getbatch().draw(vsFriend, 2560/2.34f, 450, 500, 120);
+        main.getbatch().draw(tankstarslogo, 2560/2.22f, 680, 400, 200);
+        main.getbatch().draw(vsComp, 2560/2.31f, 260, 490, 126);
+        main.getbatch().draw(vsFriend, 2560/2.32f, 420, 500, 120);
         main.getbatch().end();
 
         if (Gdx.input.justTouched()) {
@@ -88,6 +89,7 @@ public class MainMenu implements Screen {
                     dispose();
                 }
         }
+
     }
 
     @Override

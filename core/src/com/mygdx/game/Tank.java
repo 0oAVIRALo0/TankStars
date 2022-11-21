@@ -20,10 +20,12 @@ import java.awt.image.ImageProducer;
 import java.util.*;
 
 public class Tank {
+    private String Name;
     private SpriteBatch batch;
     private Texture Img;
     private Polygon Hitbox;
     private double fuel;
+    private double health;
     private ArrayList<Weapons> Weap;
     public Tank(Texture img){
         batch=new SpriteBatch();
@@ -34,5 +36,11 @@ public class Tank {
     }
     public Texture getimg(){
         return Img;
+    }
+    public void upg_fuel(){
+        fuel+=300;
+    }
+    public void upg_health(){
+        health+=(health/10);
     }
 }

@@ -90,7 +90,7 @@ public class Game implements Screen {
             touch = new Vector3();
             touch.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             if (settingsBox.contains(touch.x, touch.y)) {
-                main.setScreen(new Settings(main));
+                main.setScreen(new GameSettings(main));
                 dispose();
             }
         }

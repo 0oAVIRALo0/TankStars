@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.ScreenUtils;
-import org.w3c.dom.css.Rect;
 
 public class MainMenu implements Screen {
     Texture settingIcon;
@@ -86,7 +84,7 @@ public class MainMenu implements Screen {
             touch2 = new Vector3();
             touch2.set(Gdx.input.getX(), Gdx.input.getY(), 0);
                 if (settingBox.contains(touch2.x, touch2.y)) {
-                    main.setScreen(new Settings(main));
+                    main.setScreen(new MainMenuSettings(main));
                     dispose();
                 }
         }

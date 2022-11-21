@@ -8,21 +8,21 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
 public class MainMenu implements Screen {
-    Texture settingIcon;
-    Rectangle vsCompBox;
-    Rectangle settingBox;
-    Vector3 touch1;
-    Vector3 touch2;
-    Texture arrowLeft;
-    Texture arrowRight;
-    Texture tank1;
-    Texture tankstarslogo;
-    Texture vsComp;
-    Texture vsFriend;
-    Texture bg;
-    Texture bg1;
-    SpriteBatch batch;
-    Main main;
+    private Texture settingIcon;
+    private Rectangle vsCompBox;
+    private Rectangle settingBox;
+    private Vector3 touch1;
+    private Vector3 touch2;
+    private Texture arrowLeft;
+    private Texture arrowRight;
+    private Texture tank1;
+    private Texture tankstarslogo;
+    private Texture vsComp;
+    private Texture vsFriend;
+    private Texture bg;
+    private Texture bg1;
+    private SpriteBatch batch;
+    private Main main;
 
     public MainMenu(Main main) {
         this.main = main;
@@ -59,17 +59,17 @@ public class MainMenu implements Screen {
     @Override
     public void render(float delta) {
 //        ScreenUtils.clear(0, 0, 0.2f, 1);
-        main.batch.begin();
-        main.batch.draw(bg1, 0,0, 2688, 1242);
-        main.batch.draw(bg, 0, -60, 1020, 1180);
-        main.batch.draw(settingIcon, 0, 820, 128, 128);
-        main.batch.draw(tank1, 250, 75, 580, 580);
+        main.getbatch().begin();
+        main.getbatch().draw(bg1, 0,0, 2688, 1242);
+        main.getbatch().draw(bg, 0, -60, 1020, 1180);
+        main.getbatch().draw(settingIcon, 0, 820, 128, 128);
+        main.getbatch().draw(tank1, 250, 75, 580, 580);
 //        main.batch.draw(arrowLeft, 180, 750, 40, 40);
 //        main.batch.draw(arrowRight, 680, 750, 40, 40);
-        main.batch.draw(tankstarslogo, 2560/2.212f, 700, 400, 200);
-        main.batch.draw(vsComp, vsCompBox.x, vsCompBox.y, vsCompBox.width, vsCompBox.height);
-        main.batch.draw(vsFriend, 2560/2.34f, 450, 500, 120);
-        main.batch.end();
+        main.getbatch().draw(tankstarslogo, 2560/2.212f, 700, 400, 200);
+        main.getbatch().draw(vsComp, vsCompBox.x, vsCompBox.y, vsCompBox.width, vsCompBox.height);
+        main.getbatch().draw(vsFriend, 2560/2.34f, 450, 500, 120);
+        main.getbatch().end();
 
         if (Gdx.input.justTouched()) {
             touch1 = new Vector3();

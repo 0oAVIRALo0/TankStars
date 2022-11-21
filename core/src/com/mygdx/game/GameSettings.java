@@ -12,17 +12,17 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class GameSettings implements Screen {
 
-    ShapeRenderer shapeRenderer;
-    Vector3 touch1;
-    Vector3 touch2;
-    Rectangle menuBox;
-    Rectangle resumeBox;
-    SpriteBatch batch;
-    Texture settings;
-    Texture cross;
-    Main main;
-    Image img;
-    Stage stage;
+    private ShapeRenderer shapeRenderer;
+    private Vector3 touch1;
+    private Vector3 touch2;
+    private Rectangle menuBox;
+    private Rectangle resumeBox;
+    private SpriteBatch batch;
+    private Texture settings;
+    private Texture cross;
+    private Main main;
+    private Image img;
+    private Stage stage;
 
     public GameSettings(Main main) {
         shapeRenderer = new ShapeRenderer();
@@ -53,10 +53,10 @@ public class GameSettings implements Screen {
 
     @Override
     public void render(float delta) {
-        main.batch.begin();
-        main.batch.draw(settings, 2560/4.4f, 200, 600, 600);
-        main.batch.draw(cross, 2560/2.27f, 745, 24, 24);
-        main.batch.end();
+        main.getbatch().begin();
+        main.getbatch().draw(settings, 2560/4.4f, 200, 600, 600);
+        main.getbatch().draw(cross, 2560/2.27f, 745, 24, 24);
+        main.getbatch().end();
 
         if (Gdx.input.justTouched()) {
             touch1 = new Vector3();

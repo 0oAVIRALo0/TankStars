@@ -3,7 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Screen;
 
 public class ChooseTank implements Screen {
-    Main main;
+    private Main main;
 
     public ChooseTank(Main main) {
         this.main = main;

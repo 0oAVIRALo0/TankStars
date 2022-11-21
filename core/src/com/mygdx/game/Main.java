@@ -18,8 +18,8 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 
 public class Main extends Game {
-	SpriteBatch batch;
-	BitmapFont font;
+	private SpriteBatch batch;
+	private BitmapFont font;
 
 
 	@Override
@@ -37,5 +37,11 @@ public class Main extends Game {
 	public void dispose() {
 		batch.dispose();
 		font.dispose();
+	}
+	public SpriteBatch getbatch(){
+		return batch;
+	}
+	public BitmapFont getfont(){
+		return font;
 	}
 }

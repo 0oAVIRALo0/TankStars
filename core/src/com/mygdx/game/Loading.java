@@ -8,10 +8,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Loading implements Screen {
-    Texture tankStarsLogo;
-    Sprite sprite;
-    Main main;
-    Texture loadingScreen;
+    private Texture tankStarsLogo;
+    private Sprite sprite;
+    private Main main;
+    private Texture loadingScreen;
 
     public Loading(Main main) {
         this.main = main;
@@ -34,15 +34,15 @@ public class Loading implements Screen {
     @Override
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
-        main.batch.begin();
-        main.batch.draw(loadingScreen, 0, 0, 1700, 1000);
+        main.getbatch().begin();
+        main.getbatch().draw(loadingScreen, 0, 0, 1700, 1000);
 //        main.batch.draw(loadingPad, 2560/3.88f, 100, 380, 30);
 //        main.batch.draw(loadingLine, 2560/3.88f, 110, 280, 10);
-        main.batch.draw(tankStarsLogo, 2560/4.1f, 700, 420, 200);
+        main.getbatch().draw(tankStarsLogo, 2560/4.1f, 700, 420, 200);
 
-        main.font.draw(main.batch, "", 100, 150);
-        main.font.draw(main.batch, "", 100, 100);
-        main.batch.end();
+        main.getfont().draw(main.getbatch(), "", 100, 150);
+        main.getfont().draw(main.getbatch(), "", 100, 100);
+        main.getbatch().end();
 
         if (Gdx.input.justTouched()) {
             main.setScreen(new MainMenu(main));

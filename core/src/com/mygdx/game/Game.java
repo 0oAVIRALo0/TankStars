@@ -43,8 +43,6 @@ public class Game implements Screen {
 
         img1 = new Texture("Tanks/tank1.png");
         img2 = new Texture("Tanks/tank_3.png");
-        tank1=new Tank(img1);
-        tank2=new Tank(img2);
 
         h1 = new Texture("Health/h1.png");
         h2 = new Texture("Health/h2.png");
@@ -62,6 +60,8 @@ public class Game implements Screen {
         shapeTank2.y = 446;
         shapeTank2.width = 128;
         shapeTank2.height = 128;
+        tank1=new Tank(img1,shapeTank2);
+        tank2=new Tank(img2,shapeTank2);
 
         settingsBox = new Rectangle();
         settingsBox.x = 0;
@@ -81,8 +81,8 @@ public class Game implements Screen {
         main.getbatch().begin();
         main.getbatch().draw(clouds, 0, 0, width, height);
         main.getbatch().draw(terrain, 0, -290, width, height);
-        main.getbatch().draw(tank1.getimg(), shapeTank1.x, shapeTank1.y, shapeTank1.width, shapeTank1.height);
-        main.getbatch().draw(tank2.getimg(), shapeTank2.x, shapeTank2.y, shapeTank2.width, shapeTank2.height);
+        main.getbatch().draw(tank1.getimg(), tank1.getrect().x, tank1.getrect().y, tank1.getrect().width, tank1.getrect().height);
+        main.getbatch().draw(tank2.getimg(), tank2.getrect().x, tank2.getrect().y, tank2.getrect().width, tank2.getrect().height);
         main.getbatch().draw(h1, 2560/4.85f, 870, 260, 65);
         main.getbatch().draw(h2, 2560/2.89f, 870, 260, 65);
         main.getbatch().draw(menu, settingsBox.x, 880, settingsBox.width, settingsBox.height);

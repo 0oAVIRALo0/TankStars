@@ -12,7 +12,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.badlogic.gdx.math.Polygon;
+import com.badlogic.gdx.math.Rectangle;
+import org.w3c.dom.css.Rect;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
@@ -23,19 +24,22 @@ public class Tank {
     private String Name;
     private SpriteBatch batch;
     private Texture Img;
-    private Polygon Hitbox;
+    private Rectangle Hitbox;
     private double fuel;
     private double health;
     private ArrayList<Weapons> Weap;
-    public Tank(Texture img){
+    public Tank(Texture img, Rectangle r){
         batch=new SpriteBatch();
         Img=img;
-        Hitbox=new Polygon();
+        Hitbox=new Rectangle(r);
         fuel=150D;
         Weap=new ArrayList<Weapons>();
     }
     public Texture getimg(){
         return Img;
+    }
+    public Rectangle getrect(){
+        return Hitbox;
     }
     public void upg_fuel(){
         fuel+=(fuel/10);

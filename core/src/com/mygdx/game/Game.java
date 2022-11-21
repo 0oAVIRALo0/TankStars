@@ -35,7 +35,6 @@ public class Game implements Screen {
     private int height = 1242;
 
     public Game(Main main) {
-        batch = new SpriteBatch();
         this.main = main;
 
         clouds = new Texture("Terrain/theme2.png");

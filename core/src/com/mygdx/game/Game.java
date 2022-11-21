@@ -28,13 +28,13 @@ public class Game implements Screen {
     private Texture img2;
     private Texture terrain;
     private SpriteBatch batch;
-    private Sprite sprite;
     private Rectangle shapeTank1;
     private Rectangle shapeTank2;
-    private int width = 2688;
-    private int height = 1242;
+    private final int width = 2688;
+    private final int height = 1242;
 
     public Game(Main main) {
+        batch=new SpriteBatch();
         this.main = main;
 
         clouds = new Texture("Terrain/theme2.png");

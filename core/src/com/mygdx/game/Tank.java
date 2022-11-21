@@ -38,7 +38,7 @@ public class Tank {
         return Img;
     }
     public void upg_fuel(){
-        fuel+=300;
+        fuel+=(fuel/10);
     }
     public void upg_health(){
         health+=(health/10);

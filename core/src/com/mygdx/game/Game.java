@@ -28,7 +28,6 @@ public class Game implements Screen {
     private Texture img2;
     private Texture terrain;
     private SpriteBatch batch;
-    private Sprite sprite;
     private Rectangle shapeTank1;
     private Rectangle shapeTank2;
     private int width = 2688;

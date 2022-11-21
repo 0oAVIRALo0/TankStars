@@ -60,7 +60,7 @@ public class Game implements Screen {
         shapeTank2.y = 446;
         shapeTank2.width = 128;
         shapeTank2.height = 128;
-        tank1=new Tank(img1,shapeTank2);
+        tank1=new Tank(img1,shapeTank1);
         tank2=new Tank(img2,shapeTank2);
 
         settingsBox = new Rectangle();

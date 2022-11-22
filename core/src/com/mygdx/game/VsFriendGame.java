@@ -6,6 +6,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -95,6 +96,18 @@ public class VsFriendGame implements Screen {
                 main.setScreen(new GameSettings(main));
                 dispose();
             }
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.D)){
+            tank1.getrect().x+=Gdx.graphics.getDeltaTime()*100;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.A)){
+            tank1.getrect().x-=Gdx.graphics.getDeltaTime()*100;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)){
+            tank2.getrect().x-=Gdx.graphics.getDeltaTime()*100;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+            tank2.getrect().x+=Gdx.graphics.getDeltaTime()*100;
         }
     }
 

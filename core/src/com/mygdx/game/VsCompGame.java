@@ -1,24 +1,17 @@
-//batch.draw(h1, 2560/4.8f, 870, 260, 65);
-//batch.draw(h2, 2560/2.89f, 870, 260, 65);
-//batch.draw(menu, 0, 880, 64, 58);
-//batch.draw(Vs, 2560/3.2f, 860, 80, 80);
-
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-public class Game implements Screen {
+public class VsCompGame implements Screen {
+    Main main;
     private Rectangle settingsBox;
     private Vector3 touch;
-    private Main main;
     private Texture h1, h2;
     private Texture Vs;
     private Texture menu;
@@ -34,10 +27,12 @@ public class Game implements Screen {
     private int width = 2688;
     private int height = 1242;
 
-    public Game(Main main) {
+    public VsCompGame(Main main) {
+        this.main = main;
+
         this.main = main;
         batch=new SpriteBatch();
-        clouds = new Texture("Terrain/theme2.png");
+        clouds = new Texture("Terrain/theme3.png");
         clouds.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
         terrain = new Texture("Terrain/terrain1.png");
@@ -77,10 +72,10 @@ public class Game implements Screen {
     }
 
     @Override
-    public void render (float delta) {
+    public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         main.getbatch().begin();
-        main.getbatch().draw(clouds, 0, 0, width, height);
+        main.getbatch().draw(clouds, -220, -100, 2048, 1100);
         main.getbatch().draw(terrain, 0, -290, width, height);
         main.getbatch().draw(tank1.getimg(), tank1.getrect().x, tank1.getrect().y, tank1.getrect().width, tank1.getrect().height);
         main.getbatch().draw(tank2.getimg(), tank2.getrect().x, tank2.getrect().y, tank2.getrect().width, tank2.getrect().height);
@@ -98,18 +93,22 @@ public class Game implements Screen {
                 dispose();
             }
         }
+
     }
 
     @Override
-    public void resize (int width, int height) {
+    public void resize(int width, int height) {
+
     }
 
     @Override
-    public void pause () {
+    public void pause() {
+
     }
 
     @Override
-    public void resume () {
+    public void resume() {
+
     }
 
     @Override
@@ -118,7 +117,7 @@ public class Game implements Screen {
     }
 
     @Override
-    public void dispose () {
+    public void dispose() {
         tank1.getimg().dispose();
         terrain.dispose();
         clouds.dispose();
@@ -127,5 +126,6 @@ public class Game implements Screen {
         h2.dispose();
         menu.dispose();
         Vs.dispose();
+
     }
 }

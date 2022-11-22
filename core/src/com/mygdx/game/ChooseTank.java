@@ -1,9 +1,13 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
 
 public class ChooseTank implements Screen {
     private Main main;
+    private Texture backgroung;
+    private Texture backgroundPurple;
+
 
     public ChooseTank(Main main) {
         this.main = main;

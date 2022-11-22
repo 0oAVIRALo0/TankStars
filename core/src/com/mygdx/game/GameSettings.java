@@ -71,7 +71,7 @@ public class GameSettings implements Screen {
             touch2 = new Vector3();
             touch2.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             if (resumeBox.contains(touch2.x, touch2.y)) {
-                main.setScreen(new Game(main));
+                main.setScreen(new VsFriendGame(main));
                 dispose();
             }
         }

@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -20,6 +21,7 @@ public class MainMenuSettings implements Screen {
     private Main main;
     private Image img;
     private Stage stage;
+    private Sound s1;
     public MainMenuSettings(Main main) {
         shapeRenderer = new ShapeRenderer();
         this.main = main;
@@ -32,8 +34,8 @@ public class MainMenuSettings implements Screen {
         crossBox.y = 150;
         crossBox.width = 128;
         crossBox.height = 128;
-
-
+        s1=Gdx.audio.newSound(Gdx.files.internal("main.mp3"));
+        s1.loop(0.4f);
     }
 
     @Override
@@ -87,5 +89,6 @@ public class MainMenuSettings implements Screen {
     public void dispose() {
         settings.dispose();
         cross.dispose();
+        s1.dispose();
     }
 }

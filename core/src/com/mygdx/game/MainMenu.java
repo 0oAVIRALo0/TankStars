@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
@@ -30,11 +31,12 @@ public class MainMenu implements Screen {
     private Texture bg1;
     private SpriteBatch batch;
     private Main main;
+    private Sound s1;
 
     public MainMenu(Main main) {
         this.main = main;
         batch = new SpriteBatch();
-
+        s1=Gdx.audio.newSound(Gdx.files.internal("main.mp3"));
         tankstarslogo = new Texture("MainMenu/tankstars.png");
         vsComp = new Texture("MainMenu/vsPlayer.png");
         exit = new Texture("MainMenu/exit.png");
@@ -75,7 +77,7 @@ public class MainMenu implements Screen {
         savedGamesBox.y = 600;
         savedGamesBox.width = 490;
         savedGamesBox.height = 126;
-
+        s1.loop(0.4f);
     }
 
     @Override
@@ -175,5 +177,6 @@ public class MainMenu implements Screen {
         prp.dispose();
         exit.dispose();
         savedGames.dispose();
+        s1.dispose();
     }
 }

@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,10 +13,11 @@ public class Loading implements Screen {
     private Sprite sprite;
     private Main main;
     private Texture loadingScreen;
+    private Sound s1;
 
     public Loading(Main main) {
         this.main = main;
-
+        s1= Gdx.audio.newSound(Gdx.files.internal("loadingmusic.mp3"));
         loadingScreen = new Texture("LoadingScreen/mainLoading.png");
         sprite = new Sprite(loadingScreen);
         sprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -23,6 +25,7 @@ public class Loading implements Screen {
         loadingScreen.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
         tankStarsLogo = new Texture("LoadingScreen/tankstars.png");
+        s1.loop(0.4f);
 
     }
 
@@ -74,5 +77,6 @@ public class Loading implements Screen {
     @Override
     public void dispose() {
         loadingScreen.dispose();
+        s1.dispose();
     }
 }

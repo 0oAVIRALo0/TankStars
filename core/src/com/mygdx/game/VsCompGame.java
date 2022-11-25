@@ -47,13 +47,13 @@ public class VsCompGame implements Screen {
 
         shapeTank1 = new Rectangle();
         shapeTank1.x = 2560/6.6f;
-        shapeTank1.y = 338;
+        shapeTank1.y = 348;
         shapeTank1.width = 128;
         shapeTank1.height = 128;
 
         shapeTank2 = new Rectangle();
         shapeTank2.x = 2560/2.3f;
-        shapeTank2.y = 446;
+        shapeTank2.y = 457;
         shapeTank2.width = 128;
         shapeTank2.height = 128;
         tank1=new Tank(img1,shapeTank1);
@@ -76,11 +76,11 @@ public class VsCompGame implements Screen {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         main.getbatch().begin();
         main.getbatch().draw(clouds, -220, -100, 2048, 1100);
-        main.getbatch().draw(terrain, 0, -290, width, height);
+        main.getbatch().draw(terrain, 0, -280, width, height);
         main.getbatch().draw(tank1.getimg(), tank1.getrect().x, tank1.getrect().y, tank1.getrect().width, tank1.getrect().height);
         main.getbatch().draw(tank2.getimg(), tank2.getrect().x, tank2.getrect().y, tank2.getrect().width, tank2.getrect().height);
-        main.getbatch().draw(h1, 2560/4.85f, 870, 260, 65);
-        main.getbatch().draw(h2, 2560/2.89f, 870, 260, 65);
+        main.getbatch().draw(h1, 2560/5.18f, 870, 290, 75);
+        main.getbatch().draw(h2, 2560/2.87f, 870, 290, 75);
         main.getbatch().draw(menu, settingsBox.x, 880, settingsBox.width, settingsBox.height);
         main.getbatch().draw(Vs, 2560/3.2f, 860, 80, 80);
         main.getbatch().end();
@@ -89,7 +89,7 @@ public class VsCompGame implements Screen {
             touch = new Vector3();
             touch.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             if (settingsBox.contains(touch.x, touch.y)) {
-                main.setScreen(new GameSettings(main));
+                main.setScreen(new vsCompGameSettings(main));
                 dispose();
             }
         }

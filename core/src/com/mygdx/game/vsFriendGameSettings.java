@@ -10,7 +10,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
-public class GameSettings implements Screen {
+public class vsFriendGameSettings implements Screen {
 
     private ShapeRenderer shapeRenderer;
     private Vector3 touch1;
@@ -24,7 +24,7 @@ public class GameSettings implements Screen {
     private Image img;
     private Stage stage;
 
-    public GameSettings(Main main) {
+    public vsFriendGameSettings(Main main) {
         shapeRenderer = new ShapeRenderer();
         this.main = main;
         batch = new SpriteBatch();

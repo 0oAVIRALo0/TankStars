@@ -12,14 +12,18 @@ public class MainMenu implements Screen {
     private Rectangle vsFriendBox;
     private Rectangle vsCompBox;
     private Rectangle settingBox;
+    private Rectangle exitBox;
+    private Rectangle savedGamesBox;
     private Vector3 touch1;
     private Vector3 touch2;
     private Vector3 touch3;
-    private Texture arrowLeft;
-    private Texture arrowRight;
+    private Vector3 touch4;
+    private Vector3 touch5;
     private Texture tank1;
     private Texture tankstarslogo;
     private Texture vsComp;
+    private Texture exit;
+    private Texture savedGames;
     private Texture prp;
     private Texture vsFriend;
     private Texture bg;
@@ -32,26 +36,25 @@ public class MainMenu implements Screen {
         batch = new SpriteBatch();
 
         tankstarslogo = new Texture("MainMenu/tankstars.png");
-        vsComp = new Texture("MainMenu/vsComputer1.png");
-        vsFriend = new Texture("MainMenu/vsFriend1.png");
+        vsComp = new Texture("MainMenu/vsPlayer.png");
+        exit = new Texture("MainMenu/exit.png");
+        vsFriend = new Texture("MainMenu/vsFriend.png");
+        savedGames = new Texture("MainMenu/savedGames.png");
         bg = new Texture("MainMenu/Homescreen_BG.png");
         bg1 = new Texture("MainMenu/bg.png");
         tank1 = new Texture("Tanks/tank1.png");
         settingIcon = new Texture("MainMenu/set.png");
         prp = new Texture("MainMenu/lightprp.png");
 
-//        arrowLeft = new Texture("MainMenu/arrow_left.png");
-//        arrowRight = new Texture("MainMenu/arrow_right.png");
-
         vsFriendBox = new Rectangle();
         vsFriendBox.x = 2560/2.32f;
-        vsFriendBox.y = 340;
+        vsFriendBox.y = 330;
         vsFriendBox.width = 490;
         vsFriendBox.height = 126;
 
         vsCompBox = new Rectangle();
         vsCompBox.x = 2560/2.32f;
-        vsCompBox.y = 490;
+        vsCompBox.y = 475;
         vsCompBox.width = 490;
         vsCompBox.height = 126;
 
@@ -60,11 +63,23 @@ public class MainMenu implements Screen {
         settingBox.y = 0;
         settingBox.width = 128;
         settingBox.height = 128;
+
+        exitBox = new Rectangle();
+        exitBox.x = 2560/2.32f;;
+        exitBox.y = 760;
+        exitBox.width = 490;
+        exitBox.height = 126;
+
+        savedGamesBox = new Rectangle();
+        savedGamesBox.x = 2560/2.32f;;
+        savedGamesBox.y = 600;
+        savedGamesBox.width = 490;
+        savedGamesBox.height = 126;
+
     }
 
     @Override
     public void show() {
-
     }
 
     @Override
@@ -76,11 +91,11 @@ public class MainMenu implements Screen {
         main.getbatch().draw(bg, 0, -60, 1020, 1180);
         main.getbatch().draw(settingIcon, 0, 538, 750, 680);
         main.getbatch().draw(tank1, 250, 75, 580, 580);
-//        main.batch.draw(arrowLeft, 180, 750, 40, 40);
-//        main.batch.draw(arrowRight, 680, 750, 40, 40);
         main.getbatch().draw(tankstarslogo, 2560/2.22f, 680, 400, 200);
-        main.getbatch().draw(vsComp, 2560/2.31f, 260, 490, 126);
-        main.getbatch().draw(vsFriend, 2560/2.32f, 420, 500, 120);
+        main.getbatch().draw(vsComp, 2560/2.26f, 358, 440, 112);
+        main.getbatch().draw(vsFriend, 2560/2.26f, 500, 440, 112);
+        main.getbatch().draw(savedGames, 2560/2.265f, 220, 442, 112);
+        main.getbatch().draw(exit, 2560/2.26f, 80, 440, 112);
         main.getbatch().end();
 
         if (Gdx.input.justTouched()) {
@@ -107,6 +122,23 @@ public class MainMenu implements Screen {
             if (vsCompBox.contains(touch3.x, touch3.y)) {
                 main.setScreen(new VsCompGame(main));
                 dispose();
+            }
+        }
+
+        if (Gdx.input.justTouched()) {
+            touch5 = new Vector3();
+            touch5.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+            if (savedGamesBox.contains(touch5.x, touch5.y)) {
+                main.setScreen(new savedGames(main));
+                dispose();
+            }
+        }
+
+        if (Gdx.input.justTouched()) {
+            touch4 = new Vector3();
+            touch4.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+            if (exitBox.contains(touch4.x, touch4.y)) {
+                Gdx.app.exit();
             }
         }
 
@@ -141,5 +173,7 @@ public class MainMenu implements Screen {
         vsComp.dispose();
         vsFriend.dispose();
         prp.dispose();
+        exit.dispose();
+        savedGames.dispose();
     }
 }

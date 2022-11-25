@@ -1,8 +1,3 @@
-//batch.draw(h1, 2560/4.8f, 870, 260, 65);
-//batch.draw(h2, 2560/2.89f, 870, 260, 65);
-//batch.draw(menu, 0, 880, 64, 58);
-//batch.draw(Vs, 2560/3.2f, 860, 80, 80);
-
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
@@ -82,8 +77,8 @@ public class VsFriendGame implements Screen {
         main.getbatch().draw(terrain, 0, -180, 1900, 1000);
         main.getbatch().draw(tank1.getimg(), tank1.getrect().x, tank1.getrect().y, tank1.getrect().width, tank1.getrect().height);
         main.getbatch().draw(tank2.getimg(), tank2.getrect().x, tank2.getrect().y, tank2.getrect().width, tank2.getrect().height);
-        main.getbatch().draw(h1, 2560/4.85f, 870, 260, 65);
-        main.getbatch().draw(h2, 2560/2.89f, 870, 260, 65);
+        main.getbatch().draw(h1, 2560/5.18f, 870, 290, 75);
+        main.getbatch().draw(h2, 2560/2.87f, 870, 290, 75);
         main.getbatch().draw(menu, settingsBox.x, 880, settingsBox.width, settingsBox.height);
         main.getbatch().draw(Vs, 2560/3.2f, 860, 80, 80);
         main.getbatch().end();
@@ -92,7 +87,7 @@ public class VsFriendGame implements Screen {
             touch = new Vector3();
             touch.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             if (settingsBox.contains(touch.x, touch.y)) {
-                main.setScreen(new GameSettings(main));
+                main.setScreen(new vsFriendGameSettings(main));
                 dispose();
             }
         }

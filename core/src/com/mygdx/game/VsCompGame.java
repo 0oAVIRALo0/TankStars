@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -93,7 +94,12 @@ public class VsCompGame implements Screen {
                 dispose();
             }
         }
-
+        if (Gdx.input.isKeyPressed(Input.Keys.D)){
+            tank1.getrect().x+=Gdx.graphics.getDeltaTime()*100;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.A)){
+            tank1.getrect().x-=Gdx.graphics.getDeltaTime()*100;
+        }
     }
 
     @Override
